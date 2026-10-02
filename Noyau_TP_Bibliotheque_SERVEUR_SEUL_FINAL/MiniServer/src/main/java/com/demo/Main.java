@@ -31,6 +31,33 @@ public class Main {
 	/**
 	 * M�thode principale du programme.
 	 *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
 	 * @param args Arguments du programme
 	 */
     public static void main(String[] args) {
