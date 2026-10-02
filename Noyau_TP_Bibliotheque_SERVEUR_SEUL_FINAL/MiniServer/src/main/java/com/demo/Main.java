@@ -46,7 +46,7 @@ public class Main {
             while (!"EXIT".equals(saisie)) {
                 System.out.println("??? Saisissez EXIT pour arreter le serveur.");
                 saisie = clavier.nextLine();
-            }System.out.println("Serveur demaré et à l'ecoute " );
+            }System.out.println("Serveur demauré et à l'ecoute " );
         }
 
         serveur.arreter();
