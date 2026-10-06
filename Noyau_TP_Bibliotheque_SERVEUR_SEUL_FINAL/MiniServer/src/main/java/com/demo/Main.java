@@ -30,33 +30,6 @@ import java.util.Scanner;
 public class Main {
 	/**
 	 * M�thode principale du programme.
-	 *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
      *
 	 * @param args Arguments du programme
 	 */
