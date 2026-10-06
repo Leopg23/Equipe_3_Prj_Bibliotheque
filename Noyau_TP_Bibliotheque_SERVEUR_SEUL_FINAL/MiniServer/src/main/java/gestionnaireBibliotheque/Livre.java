@@ -45,6 +45,12 @@ public class Livre {
         Livre autre =  (Livre) obj;
         return  this.id==autre.id;
     }
+
+    //getter-setters
+
+    public int getId() {
+        return id;
+    }
 }
 
 
