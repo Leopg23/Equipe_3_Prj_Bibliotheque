@@ -5,7 +5,10 @@ import java.util.Objects;
 public class Utilisateur{
     private int id;
     private String nom;
-    private ListeEmprunts  empruntsEnCours;
+    private ListeEmprunts
+
+            //array list des emprunts
+            empruntsEnCours;
     private ListeEmprunts empruntsTermines;
     private FilePrioriteReservations reservations;
     public static final int MAX_RESERVATIONS = 10;
@@ -19,11 +22,13 @@ public class Utilisateur{
     }
 
     public void ajouterEmpruntEnCours(Emprunt emprunt) {
-    this.empruntsEnCours.ajouter(emprunt);
+    //add pour ajouter a l array list
+
+
     }
 
     public void ajouterEmpruntTermines(Emprunt emprunt) {
-        this.empruntsTermines.ajouter(emprunt);
+
     }
 
 
