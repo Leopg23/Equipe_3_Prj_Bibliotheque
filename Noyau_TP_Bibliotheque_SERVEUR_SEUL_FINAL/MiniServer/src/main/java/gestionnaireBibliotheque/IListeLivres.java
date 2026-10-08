@@ -1,7 +1,7 @@
 package gestionnaireBibliotheque;
 
 public interface IListeLivres {
-    public boolean ajouterLivre(Livre livre);
+    public boolean ajouter(Livre livre);
     public Livre supprimer(int idLivre);
     public Livre rechercher(int idLivre);
     public boolean contient(int idLivre);
