@@ -31,6 +31,7 @@ public class Livre {
         this.statut = StatutLivre.DISPONIBLE;
     }
 
+
     @Override
     public String toString() {
         return "Livre [id= " + id + " ] Titre= " + titre + ",  auteur= " + auteur + ", categorie= " + categorie + ", statut= " + statut ;
@@ -49,8 +50,10 @@ public class Livre {
     //getter-setters
 
     public int getId() {
+
         return id;
     }
+
 }
 
 

@@ -7,4 +7,16 @@ public class FilePrioriteReservations {
     public FilePrioriteReservations() {
         this.file = new PriorityQueue<>();
     }
+
+    public PriorityQueue<Reservation> getFile() {
+        return this.file;
+    }
+
+    public int taille() {
+        return 0;
+    }
+
+    public boolean ajouter(Reservation reservation) {
+        return true;
+    }
 }

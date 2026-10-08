@@ -1,12 +1,13 @@
 package gestionnaireBibliotheque;
 
+import java.security.PublicKey;
 import java.util.Objects;
 
 public abstract class  Utilisateur{
     private int id;
     private String nom;
     private ListeEmprunts empruntsEnCours =  new ListeEmprunts();
-    private ListeEmprunts empruntsTermines = new ListeEmprunts();
+    private ListeEmprunts empruntsTermine = new ListeEmprunts();
     private FilePrioriteReservations reservations;
     public static final int MAX_RESERVATIONS = 10;
 
@@ -15,7 +16,7 @@ public abstract class  Utilisateur{
         this.nom = nom;
         this.empruntsEnCours = new ListeEmprunts();
         this.reservations = new FilePrioriteReservations();
-        this.empruntsTermines = new ListeEmprunts();
+        this.empruntsTermine = new ListeEmprunts();
     }
 
     public void ajouterEmpruntEnCours(Emprunt emprunt) {
@@ -24,8 +25,8 @@ public abstract class  Utilisateur{
 
     }
 
-    public void ajouterEmpruntTermines(Emprunt emprunt) {
-        this.empruntsTermines.add(emprunt);
+    public void ajouterEmpruntTermine(Emprunt emprunt) {
+        this.empruntsTermine.add(emprunt);
     }
 
     public Emprunt supprimerEmpruntEnCours( int idEmprunt){
@@ -36,8 +37,8 @@ public abstract class  Utilisateur{
          return this.empruntsEnCours.rechercher(idEmprunt);
     }
 
-    public Emprunt rechercherEmpruntTermines(int idEmprunt){
-        return this.empruntsTermines.rechercher(idEmprunt);
+    public Emprunt rechercherEmpruntTermine(int idEmprunt){
+        return this.empruntsTermine.rechercher(idEmprunt);
     }
 
 
@@ -58,8 +59,36 @@ public abstract class  Utilisateur{
     }
 //6.12
     public boolean possedeReservationEnAttentePourLivre (int idLivre){
-      //  if (this.reservations)
+      for (Reservation res : this.reservations.getFile()){
+          if (res.getLivre().getId() == idLivre){
+              return true;
+          }
+
+      }
+      return false;
     }
 
+    public boolean ajouterReservation(Reservation reservation){
+        if (this.reservations.taille()<MAX_RESERVATIONS){
 
+            this.reservations.ajouter(reservation);
+            return  true;
+        }
+        return false;
+    }
+
+    public abstract double calculerPenalite(int joursRetard);
+
+    public abstract TypeUtilisateur getTypeUtilisateur();
+
+    @Override
+    public String toString() {
+       return  "Utilisateur { "+
+               "Type d'utilisateur : " + this.getTypeUtilisateur() +
+               " Id d'utilisateur : " + id +
+               " Nom : " + nom +
+               " Nombre d'emprunt en cours : " + empruntsEnCours +
+               " Nombre d'emprunts terminé : " + empruntsTermine +
+               " Nombre de reservations en attente : " + reservations;
+    }
 }

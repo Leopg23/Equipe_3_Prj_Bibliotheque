@@ -64,4 +64,9 @@ public class Reservation implements Comparable<Reservation>{
                 + ", typeUtilisateur: " + typeUtilisateur + "ordre_reservation" + ordreReservation
                 + ", statut: " + statut + "\n";
     }
+
+    //getter-setters
+    public Livre getLivre() {
+        return this.livre;
+    }
 }
