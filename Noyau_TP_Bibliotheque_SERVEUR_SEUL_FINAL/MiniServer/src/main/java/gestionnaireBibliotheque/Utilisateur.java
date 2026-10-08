@@ -2,6 +2,7 @@ package gestionnaireBibliotheque;
 
 import java.security.PublicKey;
 import java.util.Objects;
+import java.util.PriorityQueue;
 
 public abstract class  Utilisateur{
     private int id;
@@ -15,7 +16,7 @@ public abstract class  Utilisateur{
         this.id = id;
         this.nom = nom;
         this.empruntsEnCours = new ListeEmprunts();
-        this.reservations = new FilePrioriteReservations();
+        this.reservations = new FilePrioriteReservations(new PriorityQueue<>());
         this.empruntsTermine = new ListeEmprunts();
     }
 
