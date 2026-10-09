@@ -22,12 +22,12 @@ public abstract class  Utilisateur{
 
     public void ajouterEmpruntEnCours(Emprunt emprunt) {
     //add pour ajouter a l array list
-        this.empruntsEnCours.add(emprunt);
+        this.empruntsEnCours.ajouter(emprunt);
 
     }
 
     public void ajouterEmpruntTermine(Emprunt emprunt) {
-        this.empruntsTermine.add(emprunt);
+        this.empruntsTermine.ajouter(emprunt);
     }
 
     public Emprunt supprimerEmpruntEnCours( int idEmprunt){
@@ -91,5 +91,9 @@ public abstract class  Utilisateur{
                " Nombre d'emprunt en cours : " + empruntsEnCours +
                " Nombre d'emprunts terminé : " + empruntsTermine +
                " Nombre de reservations en attente : " + reservations;
+    }
+
+    public int getId() {
+        return this.id;
     }
 }

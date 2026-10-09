@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Emprunt {
     int id;
-    String livre;
+    private Livre livre;
     int idUtilisateur;
     int jourEmprunt;
     int jourRetourPrevu;
@@ -21,13 +21,13 @@ public class Emprunt {
 
     private static final Random rand = new Random();
 
-    public Emprunt() {
+    public Emprunt(Livre livre, int idUtilisateur, int jourEmprunt) {
         this.id = prochainID();
-
-        this.livre = "";
-        this.idUtilisateur = 0;
-        this.jourEmprunt = 0;
-        this.jourRetourPrevu = jourEmprunt += 40;
+        this.livre = livre;
+        this.idUtilisateur = idUtilisateur;
+        this.jourEmprunt = jourEmprunt;
+        this.jourRetourPrevu = jourEmprunt + 40;
+        this.statut = StatutEmprunt.EN_COURS;
     }
 
     public static int prochainID() {
@@ -65,15 +65,17 @@ public class Emprunt {
 
     @Override
     public String toString() {
-        return "Emprunt {" +
-                "ID=" + id +
-                ", Livre='" + livre + '\'' +
-                ", ID Utilisateur=" + idUtilisateur +
-                ", Jour Emprunt=" + jourEmprunt +
-                ", Retour Prévu=" + jourRetourPrevu +
-                ", Jour Retour=" + (statut == StatutEmprunt.RETOURNE ? jourRetour : "Non retourné") +
-                ", Statut=" + statut +
-                '}';
+        return  "=======================================\n" +
+                "|        DÉTAILS DE L'EMPRUNT         |\n" +
+                "=======================================\n" +
+                "| ID             : " + id + "\n" +
+                "| Livre ID       : " + livre.getId() + "\n" +
+                "| ID Utilisateur : " + idUtilisateur + "\n" +
+                "| Jour Emprunt   : " + jourEmprunt + "\n" +
+                "| Retour Prévu   : " + jourRetourPrevu + "\n" +
+                "| Jour Retour    : " + (statut == StatutEmprunt.RETOURNE ? jourRetour : "Non retourné") + "\n" +
+                "| Statut         : " + statut + "\n" +
+                "=======================================";
     }
     public int getId() {
         return this.id;

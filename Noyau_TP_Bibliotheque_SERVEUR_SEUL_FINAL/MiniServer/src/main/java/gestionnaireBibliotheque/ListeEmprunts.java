@@ -8,7 +8,7 @@
         private ArrayList<Emprunt> emprunts = new ArrayList<>();
 
         public ListeEmprunts() {
-            this.emprunts = emprunts;
+            this.emprunts = new ArrayList<>();
         }
 
         public boolean  ajouter(Emprunt emprunt) {
