@@ -61,6 +61,8 @@ public class Emprunt {
         }
     }
 
+
+
     @Override
     public String toString() {
         return "Emprunt {" +
@@ -73,5 +75,7 @@ public class Emprunt {
                 ", Statut=" + statut +
                 '}';
     }
-
+    public int getId() {
+        return this.id;
+    }
 }
